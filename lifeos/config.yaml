@@ -1,7 +1,7 @@
 # Home Assistant app ("add-on") definition for Life OS.
 # Source of truth: life-os repository, deployment/home-assistant/app/.
 name: Life OS
-version: '0.5.0'
+version: '0.6.0'
 slug: lifeos
 description: Privates Alltags-Tracking – Zugriff nur über dein Tailscale-Netz
 url: https://github.com/Larze88/life-os-ha
