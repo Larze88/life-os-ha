@@ -1,0 +1,23 @@
+# Home Assistant app ("add-on") definition for Life OS.
+# Source of truth: life-os repository, deployment/home-assistant/app/.
+name: Life OS
+version: '0.2.0'
+slug: lifeos
+description: Privates Alltags-Tracking – Zugriff nur über dein Tailscale-Netz
+url: https://github.com/Larze88/life-os-ha
+arch:
+  - aarch64
+image: ghcr.io/larze88/lifeos-{arch}
+init: false
+startup: application
+boot: auto
+# Stop the app during Home Assistant backups so the SQLite file is consistent.
+backup: cold
+options:
+  tailscale_auth_key: ''
+  tailscale_hostname: lifeos
+  log_level: info
+schema:
+  tailscale_auth_key: password?
+  tailscale_hostname: match(^[a-z0-9][a-z0-9-]{0,62}$)
+  log_level: list(debug|info|warn|error)
